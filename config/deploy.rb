@@ -2,7 +2,16 @@
 lock "3.8.2"
 
 set :application, "gst-rails-api"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :repo_url, "git@github.com:sahilmittal/gst-rails-api.git"
+
+set :branch, :master
+set :user, ask('Enter User name for production server (deploy)', 'deploy', echo: true)
+server '18.220.15.51', user: fetch(:user)
+set :stage, :production
+set :deploy_to, "/var/www/gst-rails-api/#{ fetch(:stage) }"
+set :rails_env, :production
+set :tmp_dir, "/home/#{ fetch(:user) }/tmp"
+
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -25,6 +34,9 @@ set :repo_url, "git@example.com:me/my_repo.git"
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
+
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
