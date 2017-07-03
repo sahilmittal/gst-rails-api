@@ -8,7 +8,7 @@ task :import => [:environment] do
   file = "vendor/categories.csv"
   CSV.foreach(file, :headers => false) do |row|
     Category.create ({
-      :id => row[0]
+      :id => row[0],
       :name => row[1]
     })
   end
