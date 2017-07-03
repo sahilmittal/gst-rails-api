@@ -5,8 +5,8 @@ set :application, "gst-rails-api"
 set :repo_url, "git@github.com:sahilmittal/gst-rails-api.git"
 
 set :branch, :master
-set :user, ask('Enter User name for production server (deploy)', 'deploy', echo: true)
-server '18.220.15.51', user: fetch(:user)
+set :user, ask('Enter User name for production server', 'root', echo: false)
+server '18.220.15.51', user: fetch(:user), roles: %w{web app db}
 set :stage, :production
 set :deploy_to, "/var/www/gst-rails-api/#{ fetch(:stage) }"
 set :rails_env, :production
