@@ -25,6 +25,7 @@ task :import => [:environment] do
   end
 
   # services
+  Service.delete_all
   file = "vendor/services.csv"
   CSV.foreach(file, :headers => false) do |row|
     Service.create ({
