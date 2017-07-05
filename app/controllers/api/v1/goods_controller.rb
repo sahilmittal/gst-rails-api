@@ -8,7 +8,7 @@ module Api
         elsif (params[:q])
           @goods = Good.where("name LIKE ?" , "%#{ params[:q] }%")
         else
-          @goods = Good.order('created_at ASC')
+          @goods = Good.order('name ASC')
         end
         render json: @goods
       end

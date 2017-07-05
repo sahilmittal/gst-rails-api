@@ -7,6 +7,13 @@ Rails.application.routes.draw do
         resources :goods
       end
       resources :services
+      resources :resource_libraries
+      resources :resource_libraries do
+        resources :resources
+      end
+      resources :resources do
+        get :download, on: :member
+      end
     end
   end
 end

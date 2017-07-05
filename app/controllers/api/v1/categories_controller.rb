@@ -2,7 +2,7 @@ module Api
   module V1
     class CategoriesController < ApplicationController
       def index
-        @categories = Category.order('created_at ASC')
+        @categories = Category.order('name ASC')
         render json: @categories
       end
     end
