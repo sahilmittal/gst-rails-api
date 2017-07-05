@@ -3,7 +3,7 @@ require 'csv'
 desc "Populate tables in db"
 
 task :import => [:environment] do
-  
+
   Good.delete_all
   Category.delete_all
   Service.delete_all
@@ -42,6 +42,7 @@ task :update_resource_library => [:environment] do
 
   Resource.delete_all
   ResourceLibrary.delete_all
+  
   rlcount = 0; rcount = 0
   Dir['vendor/Resource Library/*'].each do |rlname|
     rlcount += 1
@@ -51,4 +52,5 @@ task :update_resource_library => [:environment] do
       Resource.create!(id: rcount, resource_library_id: rlcount, name: rname[/([^\/]+)$/].split(".pdf")[0])
     end
   end
+
 end
