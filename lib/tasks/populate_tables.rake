@@ -46,7 +46,7 @@ task :update_resource_library => [:environment] do
     ResourceLibrary.create!(id: rlcount, name: rlname[/([^\/]+)$/])
     Dir["vendor/Resource Library/#{ rlname[/([^\/]+)$/] }/*"].each do |rname|
       rcount += 1
-      Resource.create!(id: rcount, resource_library_id: rlcount, name: rname[/([^\/]+)$/].split(".")[0])
+      Resource.create!(id: rcount, resource_library_id: rlcount, name: rname[/([^\/]+)$/].split(".pdf")[0])
     end
   end
 end
