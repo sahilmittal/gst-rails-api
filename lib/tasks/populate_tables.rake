@@ -3,8 +3,12 @@ require 'csv'
 desc "Populate tables in db"
 
 task :import => [:environment] do
-  # categories
+  
+  Good.delete_all
   Category.delete_all
+  Service.delete_all
+
+  # categories
   file = "vendor/categories.csv"
   CSV.foreach(file, :headers => false) do |row|
     Category.create ({
@@ -14,7 +18,6 @@ task :import => [:environment] do
   end
 
   # goods
-  Good.delete_all
   file = "vendor/goods.csv"
   CSV.foreach(file, :headers => false) do |row|
     Good.create ({
@@ -25,7 +28,6 @@ task :import => [:environment] do
   end
 
   # services
-  Service.delete_all
   file = "vendor/services.csv"
   CSV.foreach(file, :headers => false) do |row|
     Service.create ({
