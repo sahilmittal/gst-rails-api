@@ -1,5 +1,5 @@
 class GoodSerializer < ActiveModel::Serializer
-  attributes :id, :name, :gst
+  attributes :name, :gst
   belongs_to :category
  
   class CategorySerializer < ActiveModel::Serializer

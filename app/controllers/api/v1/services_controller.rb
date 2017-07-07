@@ -2,12 +2,12 @@ module Api
   module V1
     class ServicesController < ApplicationController
       def index
-        if (params[:q])
-          @services = Service.where("name LIKE ?" , "%#{ params[:q] }%")
-        else
+        begin
           @services = Service.order('created_at ASC')
+          render json: @services
+        rescue Exception => e
+          render json: { error: 'Failed to fetch the services' }, status: 422
         end
-        render json: @services
       end
     end
   end
