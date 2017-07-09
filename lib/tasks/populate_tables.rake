@@ -21,9 +21,10 @@ task :import => [:environment] do
   file = "vendor/goods.csv"
   CSV.foreach(file, :headers => false) do |row|
     Good.create ({
-      :category_id => row[0],
-      :name => row[2],
-      :gst => row[3]
+      :id => row[0],
+      :category_id => row[1],
+      :name => row[3],
+      :gst => row[4]
     })
   end
 
@@ -31,8 +32,9 @@ task :import => [:environment] do
   file = "vendor/services.csv"
   CSV.foreach(file, :headers => false) do |row|
     Service.create ({
-      :name => row[0],
-      :gst => row[1]
+      :id => row[0],
+      :name => row[1],
+      :gst => row[2]
     })
   end
 
