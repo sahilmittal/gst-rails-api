@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170712074710) do
+ActiveRecord::Schema.define(version: 20170712114808) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 20170712074710) do
   create_table "goods", force: :cascade do |t|
     t.string "name"
     t.decimal "gst"
-    t.integer "category_id"
+    t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_goods_on_category_id"
@@ -43,7 +46,7 @@ ActiveRecord::Schema.define(version: 20170712074710) do
 
   create_table "resources", force: :cascade do |t|
     t.string "name"
-    t.integer "resource_library_id"
+    t.bigint "resource_library_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["resource_library_id"], name: "index_resources_on_resource_library_id"
@@ -56,4 +59,6 @@ ActiveRecord::Schema.define(version: 20170712074710) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "goods", "categories"
+  add_foreign_key "resources", "resource_libraries"
 end
