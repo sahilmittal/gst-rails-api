@@ -4,26 +4,32 @@ Rails.application.routes.draw do
     namespace 'v1' do
 
       # goods
-      resources :goods
+      resources :goods, only: [:index]
 
       # categories
-      resources :categories do
+      resources :categories, only: [:index] do
         resources :goods
       end
 
       # services
-      resources :services
+      resources :services, only: [:index]
 
       # search
-      resources :search
+      resources :search, only: [:index]
 
       # resource library
-      resources :resource_libraries
-      resources :resource_libraries do
+      resources :resource_libraries, only: [:index] do
         resources :resources
       end
-      resources :resources do
+
+      # resources
+      resources :resources, only: [:index] do
         get :download, on: :member
+      end
+
+      # feedback
+      resources :feedbacks, only: [:index, :create] do
+        get :toggle_resolved, on: :member
       end
 
     end

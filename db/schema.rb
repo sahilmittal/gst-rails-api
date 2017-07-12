@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170709104412) do
+ActiveRecord::Schema.define(version: 20170712074710) do
 
-  create_table "api_keys", force: :cascade do |t|
-    t.string "access_token"
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
+  create_table "feedbacks", force: :cascade do |t|
+    t.text "message"
+    t.string "user_email"
+    t.boolean "resolved", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
