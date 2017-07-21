@@ -40,6 +40,23 @@ task :import => [:environment] do
 
 end
 
+task :import_codes => [:environment] do
+
+  Code.delete_all
+
+  # Code
+  file = "vendor/codes.csv"
+  CSV.foreach(file, :headers => false) do |row|
+    Code.create ({
+      :id => row[0],
+      :name => row[2],
+      :code => row[1],
+      :code_type => row[3]
+    })
+  end
+
+end
+
 task :update_resource_library => [:environment] do
 
   Resource.delete_all

@@ -32,6 +32,9 @@ Rails.application.routes.draw do
         get :toggle_resolved, on: :member
       end
 
+      # HSN/SAC codes
+      resources :codes, only: [:index]
+
     end
   end
 end
