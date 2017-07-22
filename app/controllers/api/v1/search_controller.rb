@@ -4,9 +4,9 @@ module Api
       def index
         begin
           if (params[:q])
-            query = "lower(name) LIKE ?" , "%#{ params[:q].downcase }%"
-            @goods = Good.where(query)
-            @services = Service.where(query)
+            query = "lower(name) LIKE ?" , "%#{ params[:q].downcase }% LIMIT 1"
+            @goods = Good.where(query).limit(25)
+            @services = Service.where(query).limit(25)
             response = @goods + @services
             render json: response
           else

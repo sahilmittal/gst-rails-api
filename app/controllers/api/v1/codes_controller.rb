@@ -5,7 +5,7 @@ module Api
         begin
           if (params[:q])
             query = "lower(name) LIKE ?" , "%#{ params[:q].downcase }%"
-            @codes = Code.where(query)
+            @codes = Code.where(query).limit(25)
             render json: @codes
           else
             render json: { error: 'Parameter `q` is missing!' }, status: 422
