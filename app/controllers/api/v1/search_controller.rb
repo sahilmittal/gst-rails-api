@@ -4,7 +4,7 @@ module Api
       def index
         begin
           if (params[:q])
-            query = "lower(name) LIKE ?" , "%#{ params[:q].downcase }% LIMIT 1"
+            query = "lower(name) LIKE ?" , "%#{ params[:q].downcase }%"
             @goods = Good.where(query).limit(25)
             @services = Service.where(query).limit(25)
             response = @goods + @services
