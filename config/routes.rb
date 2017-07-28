@@ -35,6 +35,9 @@ Rails.application.routes.draw do
       # HSN/SAC codes
       resources :codes, only: [:index]
 
+      # campaign
+      resources :campaigns, only: [:index, :create]
+
     end
   end
 end

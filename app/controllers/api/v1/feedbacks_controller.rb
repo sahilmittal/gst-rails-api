@@ -18,7 +18,7 @@ module Api
           if @feedback.save
             render json: @feedback
           else
-            render json: { errors: feedback.errors.full_messages }, status: 422
+            render json: { errors: @feedback.errors.full_messages }, status: 422
           end
         rescue Exception => e
           render json: { error: 'Failed to save the feedback' }, status: 422
