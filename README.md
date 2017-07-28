@@ -1,24 +1,35 @@
-# README
+# GST India APIs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version:  `2.4.0`
+* Rails version: `5.1.1`
+* Database: `PostgreSQL`
+* Application server: `Passenger`
+* Web server: `nginx`
+* Deployment tool: `capistrano`
 
-Things you may want to cover:
+## Database
 
-* Ruby version
+Database creation: 
 
-* System dependencies
+```
+mysql> CREATE DATABASE gst_development;
+```
 
-* Configuration
+Database migrations:
+```
+bundle exec rake db:migrate
+```
 
-* Database creation
+## Running
 
-* Database initialization
+Start a local server (port: 3000) :
 
-* How to run the test suite
+```
+> rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Deployment
 
-* Deployment instructions
-
-* ...
+```
+> cap production deploy
+```
