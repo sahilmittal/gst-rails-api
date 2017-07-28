@@ -25,11 +25,11 @@ bundle exec rake db:migrate
 Start a local server (port: 3000) :
 
 ```
-> rails s
+rails s
 ```
 
 ## Deployment
 
 ```
-> cap production deploy
+cap production deploy
 ```
