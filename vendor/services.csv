@@ -1,6 +1,11 @@
 1,Transport of goods by rail,5% with ITC of input services
 2,Transport of passengers by rail (other than sleeper class),5% with ITC of input services
-3,Services of goods transport agency (GTA) in relation to transportation of goods [other than used household goods for personal use],5% No ITC
+3,Services of goods transport agency (GTA) in relation to transportation of goods [other than used household goods for personal use],"Allowed option of 12% GST
+with full ITC under forward
+charge. 5% GST with no ITC
+will also continue. (However,
+the GTA has to give an option at
+the beginning of financial year)"
 4,Services of goods transport agency in relation to transportation of used household goods for personal use.,5% No ITC
 5,Transport of goods in a vessel including services provided or agreed to be provided by a person located in non-taxable territory to a person located in non-taxable territory by way of transportation of goods by a vessel from a place outside India up to the customs station of clearance inIndia,"5% with ITC of input services and ITC of GST paid on ships, vessels including bulk carriers and tankers"
 6,"Renting of motorcab (If fuel cost is borneby the service recipient, then 18% GST will apply)",5% No ITC
@@ -124,3 +129,11 @@
 124,Services provided to the Government under any training programme for which total expenditure is borne by the Government,Exempted
 125,"Services by way of job work in relation to – a) Textile yarns (other than man-made fibre/filament) & textile fabrics b) Cut and polished diamonds; precious and semi-precious stones, or plain and studded jewellery of gold and other precious metals, falling under chapter 71 of HSN c) Printing of books (including braille books), journals and periodicals d) Processing of leather",5% with Full ITC
 126,Services by way of right to admission to exhibition of cinematographic films where the consideration for admission is Rs. 100 or less.,18% with Full ITC
+127,"Job work services in respect of the textiles and textile products (including
+MMF yarn, garments, made-ups, etc. falling in Chapters 50 to 63)",5%
+128,"Services by way of printing of newspapers, books (including Braille books), journals and periodicals where only content is supplied by the publisher and the physical inputs including paper used for printing belongs to the printer",12% with full ITC
+129,"Services by way of printing of newspapers, books (including Braille books), journals and periodicals using physical inputs owned by others (including an unregistered publisher/supplier)",5% with full ITC
+130,"Works contract services provided to Government, local authority or governmental authority and in respect of post-harvest storage infrastructure for agricultural produce, mechanized food grain handling system",12% with full ITC
+131,Margin/commission payable to Fair Price Shop Dealers by Central/ State Governments,Nil
+132,Admission to planetarium,18% with full ITC
+133,Rent-a-cab service,Allowed option of 12% GST with full ITC. 5% GST with no ITC will also continue
