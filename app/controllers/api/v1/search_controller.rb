@@ -4,7 +4,9 @@ module Api
       def index
         begin
           if (params[:q])
-            query = "lower(name) LIKE ?" , "%#{ params[:q].downcase }%"
+            # query = "lower(name) REGEXP ?" , "[[:<:]]#{ params[:q].downcase }[[:>:]]"
+            # query = "name ~* ?", "#{ params[:q].downcase }\\M"
+            query = "to_tsvector(name) @@ to_tsquery('#{ params[:q].downcase }')"
             @goods = Good.where(query).limit(25)
             @services = Service.where(query).limit(25)
             response = @goods + @services
